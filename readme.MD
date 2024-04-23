@@ -14,5 +14,8 @@ git commit -m "commit-message"
 ```
 
 * Push the changes to GitHub repo
+```
+git push -u origin main
+```
 
-**naming conventions:use small case with hypens(-) with no spaces**
+**Naming conventions: use small case with hypens(-) with no spaces**
