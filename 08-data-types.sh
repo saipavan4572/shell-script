@@ -15,3 +15,5 @@ prod=$(($Num1 * $Num2))
 
 quot=$(($Num1 / $Num2))
       echo "The quotient is $quot"
+
+##example run: sh 08-data-types.sh 40 20
