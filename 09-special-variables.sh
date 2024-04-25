@@ -13,6 +13,8 @@ sleep 60 &   # to run the command in the background
 echo "Process ID of last background command: $!"
 
 
+echo "To check the exit status of a previous command is: $?"
+
 <<com
 1) $@
 [ ec2-user@ip-172-31-87-141 ~/shell-script ]$ sh 09-special-variables.sh 10 20
