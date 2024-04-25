@@ -17,6 +17,8 @@ quot=$(($Num1 / $Num2))
       echo "The quotient is $quot"
 
 ##example run: sh 08-data-types.sh 40 20
+
+## below <<com section is used for multi-line comments- start with <<com and end with com
 <<com
 
 echo "Scenario:1 number and string"
