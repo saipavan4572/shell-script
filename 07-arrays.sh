@@ -10,4 +10,4 @@ echo "First movie is: ${movies[0]}"
 echo "Second movie is: ${movies[1]}"
 
 #to print all the contents/values in the array
-echo "First movie is: ${movies[@]}"
+echo "All movies list is: ${movies[@]}"
