@@ -8,7 +8,7 @@ echo "Home directory of current user: $HOME"
 echo "Which user is running this script: $USER"
 echo "Hostname: $HOSTNAME"
 echo "Process ID of the current shell script: $$"
-
+sleep 60
 
 
 <<com
@@ -68,6 +68,16 @@ Which user is running this script: ec2-user
 Hostname: ip-172-31-87-141.ec2.internal
 
 8) $$
+[ ec2-user@ip-172-31-87-141 ~/shell-script ]$ sh 09-special-variables.sh 10 20 harish girish 876abc 2#bc9u*x
+All variables: 10 20 harish girish 876abc 2#bc9u*x
+Number of variables passed: 6
+Script Name: 09-special-variables.sh
+Current working directory: /home/ec2-user/shell-script
+Home directory of current user: /home/ec2-user
+Which user is running this script: ec2-user
+Hostname: ip-172-31-87-141.ec2.internal
+Process ID of the current shell script: 2475
 
+9) 
 
 com
