@@ -14,6 +14,9 @@ echo "Process ID of last background command: $!"
 
 
 echo "To check the exit status of a previous command is: $?"
+#check this command separately not included in this script to check both success & fail
+# if the previous command is success - exit status is 0
+# if the previous command is failed - exit status is from 1-127
 
 <<com
 1) $@
