@@ -1,8 +1,17 @@
 #!/bin/bash
 
-No1=$1
-No2=$2
+Num1=$1
+Num2=$2
 
-SUM=$((No1+No2))
+SUM=$(($Num1 + $Num2))
 
-echo "Sum of $No1 and $No2 is: $SUM"
+echo "Sum of $Num1 and $Num2 is: $SUM"
+
+diff=$(($num1 - $num2))
+echo "The difference is $diff"
+
+prod=$(($num1 * $num2))
+      echo "The product is $prod"
+
+quot=$(($num1 / $num2))
+      echo "The quotient is $quot"
