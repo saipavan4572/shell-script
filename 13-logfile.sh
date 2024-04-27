@@ -33,13 +33,36 @@ VALIDATE $? "Installing Git"
 echo "End of the script"
 
 <<com
-calling a function:
 
-FUNCTIONNAME input-1 input-2 ...
-ex:
-VALIDATE $? "Installing MySql"
+[ root@ip-172-31-16-7 ~/shell-script ]# sh 13-logfile.sh
+You are super user.
+Installing MySql.....SUCCESS
+Installing Git.....SUCCESS
+End of the script
 
-here we are calling VALIDATE function with two inputs, 
-$? - for the exit status of previously executed script/command
-"Installing MySql" - string/text message for what we are doing
+34.229.12.92 | 172.31.16.7 | t2.micro | https://github.com/saipavan4572/shell-script.git
+[ root@ip-172-31-16-7 ~/shell-script ]# cd /tmp
+
+34.229.12.92 | 172.31.16.7 | t2.micro | null
+[ root@ip-172-31-16-7 /tmp ]# ls -l
+total 4
+-rw-r--r-- 1 root root 356 Apr 27 17:59 13-logfile-2024-04-27-17-59-29.log
+drwx------ 3 root root  60 Apr 27 17:04 systemd-private-858a19dbe9164731a27896a31a0d3c7e-chronyd.service-lZazuZ
+drwx------ 3 root root  60 Apr 27 17:04 systemd-private-858a19dbe9164731a27896a31a0d3c7e-dbus-broker.service-wSCSKa
+drwx------ 3 root root  60 Apr 27 17:04 systemd-private-858a19dbe9164731a27896a31a0d3c7e-systemd-logind.service-PZSuqO
+
+34.229.12.92 | 172.31.16.7 | t2.micro | null
+[ root@ip-172-31-16-7 /tmp ]# cat 13-logfile-2024-04-27-17-59-29.log
+Last metadata expiration check: 0:48:49 ago on Sat Apr 27 17:10:41 2024.
+Package mysql-8.0.36-1.el9_3.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:48:50 ago on Sat Apr 27 17:10:41 2024.
+Package git-2.39.3-1.el9_2.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+
 com
