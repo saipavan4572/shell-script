@@ -76,12 +76,16 @@ hello world     -----> WHITE
  [ root@ip-172-31-16-7 ~/shell-script ]# echo -e "\e[34m hello \e[0m world"
  hello  world   -----> BLUE & WHILE
 
+==========================================================================
 
+[ root@ip-172-31-16-7 ~/shell-script ]# sh 14-colors.sh
+Starting of the Colors script 2024-04-27-18-39-32
+You are super user.
+Installing MySql..... SUCCESS
+Installing Git..... SUCCESS
+Installing docker - wrong command..... FAILED
 
-
-
-
-
+Now we can go and check in the log file for the failed installtion script/command details.
 
 com
 
