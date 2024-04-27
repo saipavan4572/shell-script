@@ -1,6 +1,9 @@
 #!/bin/bash
 
 USERID=$(id -u)
+TIMESTAMP=$(date +%F-%H-%M-%S)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 VALIDATE(){
     if [ $1 -ne 0 ]         # $1 - we have exit status whenever we call the function passing $? as input
@@ -8,7 +11,7 @@ VALIDATE(){
         echo "$2.....FAILED"
         exit 1              # we use exit command only when there is a failure
     else
-        echo "$2.....SUCCESS"
+        echo "$2.....SUCCESS" 
     fi
 }
 
@@ -20,10 +23,10 @@ else
     echo "You are super user."
 fi
 
-dnf install mysql -y
+dnf install mysql -y &>> $LOGFILE
 VALIDATE $? "Installing MySql"
 
-dnf install git -y
+dnf install git -y &>> $LOGFILE
 VALIDATE $? "Installing Git"
 
 
