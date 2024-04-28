@@ -40,8 +40,10 @@ systemctl start mysqld &>>$LOGFILE
 VALIDATE $? "starting MYSQL server"
 
 ##OPTION-1
-##mysql_secure_installation --set-root-pass ExpenseApp@1
-##VALIDATE $? "setting up root password for MYSQL server"
+mysql_secure_installation --set-root-pass ExpenseApp@1
+VALIDATE $? "setting up root password for MYSQL server"
+
+<<com
 
 #below code is useful to achive the idempotent nature
 ##OPTION-2 : hardcode the password in the script
@@ -67,3 +69,5 @@ then
 else
     echo -e "MYSQL root password is already setup...$Y SKIPPING $N"
 fi
+
+com
