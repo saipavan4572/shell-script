@@ -39,14 +39,14 @@ VALIDATE $? "Enabling MYSQL server"
 systemctl start mysqld &>>$LOGFILE
 VALIDATE $? "starting MYSQL server"
 
-##OPTION-1
-mysql_secure_installation --set-root-pass ExpenseApp@1
-VALIDATE $? "setting up root password for MYSQL server"
+##OPTION-1 - start     hardcoded password and not idempotent
+#mysql_secure_installation --set-root-pass ExpenseApp@1
+#VALIDATE $? "setting up root password for MYSQL server"
+##OPTION-1 - end
 
-<<com
 
 #below code is useful to achive the idempotent nature
-##OPTION-2 : hardcode the password in the script
+##OPTION-2 -start hardcode the password but idempotent achived
 mysql -h db.pspkdevops.online -uroot -pExpenseApp@1 -e 'show databases;' &>>$LOGFILE
 if [ $? -ne 0 ]
 then
@@ -55,6 +55,8 @@ then
 else
     echo -e "MYSQL root password is already setup...$Y SKIPPING $N"
 fi
+##OPTION-2 - end
+<<com
 
 ##OPTION-3
 ## instead of hardcode the password we can pass it as argument while running the script
