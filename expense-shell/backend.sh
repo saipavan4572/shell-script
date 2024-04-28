@@ -40,9 +40,11 @@ dnf install nodejs -y &>>$LOGFILE
 VALIDATE $? "Installing NODEJS"
 
 ##Option-1
-#useradd expense &>>$LOGFILE
-#VALIDATE $? "Creating expense user"
+useradd expense &>>$LOGFILE
+VALIDATE $? "Creating expense user"
 ## here useradd expense command is not idempotent so we need to handle this scenario
+
+<<com
 
 ##Option-2
 ##To achive idempotent we follow below steps
@@ -95,3 +97,4 @@ VALIDATE $? "Schema loading"
 systemctl restart backend &>>$LOGFILE
 VALIDATE $? "Restarting backend service"
 
+com
