@@ -50,7 +50,7 @@ unzip /tmp/frontend.zip &>>$LOGFILE
 VALIDATE $? "Extracting frontend code"
 
 #source file path is your repository path in which the file is created.
-cp /home/ec2-user/expense-shell/expense.conf /etc/nginx/default.d/expense.conf &>>$LOGFILE
+cp /home/ec2-user/shell-script/expense-shell/expense.conf /etc/nginx/default.d/expense.conf &>>$LOGFILE
 VALIDATE $? "Copied expense path"
 
 systemctl restart nginx &>>$LOGFILE
