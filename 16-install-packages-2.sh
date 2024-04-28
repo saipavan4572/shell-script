@@ -44,3 +44,23 @@ do
         VALIDATE $? "Installing of $i"
     fi
 done
+
+<<com
+
+[ root@ip-172-31-16-7 ~/shell-script ]# bash 16-install-packages-2.sh mysql git gcc fail2ban
+You are super user.
+Package to insatll is:: mysql
+Error: No matching Packages to list
+Installing of mysql..... SUCCESS
+Package to insatll is:: git
+git is already installed...  SKIPPING
+Package to insatll is:: gcc
+Error: No matching Packages to list
+Installing of gcc..... SUCCESS
+Package to insatll is:: fail2ban
+Error: No matching Packages to list
+Installing of fail2ban..... SUCCESS
+
+
+
+com
