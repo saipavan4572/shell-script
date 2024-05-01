@@ -15,7 +15,8 @@ else
     exit 1
 fi
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +10)
+##FILES=$(find $SOURCE_DIR -name "*.log" -mtime +10)
+FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +10)
 
 echo "Files to delete : $FILES"
 
@@ -52,14 +53,26 @@ find . -type f -name "*.log" -mtime +10
 ./test1.log
 
 ---> ./mysql-test.log is a directory
+so with the above command it checks only .log extension but not the type(file/directory)
+to avoid this issue we can use the type in the command as below.
 
-to fetch the .log files which are older than from today is:
+to fetch the .log extension files/directories and type as file which are older than from today is:
 [ ec2-user@ip-172-31-25-61 /tmp/app-logs ]$ find . -name "*.log" -type f -mtime +10
 ./common-test.log
 ./test2.log
 ./test1.log
 
 IFS - Internal Field Separator
+
+Setting up the crontab for the shell script.
+--------------------------------------------
+[ ec2-user@ip-172-31-25-61 ~/shell-script ]$ crontab -e
+no crontab for ec2-user - using an empty one
+crontab: installing new crontab
+
+[ ec2-user@ip-172-31-25-61 ~/shell-script ]$ crontab -l
+*/2 * * * * sh /home/ec2-user/shell-script/21-delete-old-logs.sh
+
 
 com
 
