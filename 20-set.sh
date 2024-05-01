@@ -12,7 +12,7 @@ else
     echo "You are super user."
 fi
 
-dnf install mysql -y
+dnf install mysqlsldkf -y
 dnf install git -y
 
 echo "End of the script."
