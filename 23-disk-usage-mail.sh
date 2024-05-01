@@ -18,3 +18,7 @@ do
 done <<< $DISK_USAGE
 
 echo -e "Message : $MESSAGE"
+
+# echo "body" | mail -s "subject" to-email-address
+
+echo "$MESSAGE" | mail -s "Disk Usage Alert!!" pavan.pathakota@gmail.com
