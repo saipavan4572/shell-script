@@ -6,7 +6,7 @@ DISK_THRESHOLD=10
 while IFS= read -r line
 do
     USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
-    FOLDER=$(echo $line | awk -F " " '{print $6F}')
+    FOLDER=$(echo $line | awk -F " " '{print $nF}')
 
     if [ $USAGE -ge $DISK_THRESHOLD ]
     then
