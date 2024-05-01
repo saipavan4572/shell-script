@@ -17,7 +17,7 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +10)
 
-echo "Files to delete : " $FILES
+echo "Files to delete : $FILES"
 
 <<com
 case-1 if the directory exists
