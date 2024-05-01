@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE_DIR=/tmp/app-logsabc
+SOURCE_DIR=/tmp/app-logs
 
 R="\e[31m"
 G="\e[32m"
@@ -21,6 +21,8 @@ case-1 if the directory exists
  Soruce Directory exists
 
  case-2 if the directory does't exists
+[ ec2-user@ip-172-31-25-61 ~/shell-script ]$ sh 21-delete-old-logs.sh
+ Please make sure /tmp/app-logsabc exists!!!
 
 
 
