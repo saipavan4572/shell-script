@@ -24,4 +24,6 @@ echo -e "Message : $MESSAGE"
 
 # echo "body" | mail -s "subject" to-email-address
 
-echo "$MESSAGE" | mail -s "CPU Usage Alert!!" pavan.pathakota@gmail.com
+echo "message: $MESSAGE" 
+
+# echo "$MESSAGE" | mail -s "CPU Usage Alert!!" pavan.pathakota@gmail.com
