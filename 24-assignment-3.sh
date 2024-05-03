@@ -2,25 +2,26 @@
 
 ## display the top 5 cpu consuming process in linux, send alert if more than threshold
 
-DISK_USAGE=$(df -hT | grep xfs)
-DISK_THRESHOLD=10
+CPU_USAGE=$(ps auxk-c --no-headers | head -6 | awk -F " " '{print $3F}')
+PROCESSID=$(ps auxk-c --no-headers | head -6 | awk -F " " '{print $2F}')
+CPU_THRESHOLD=10
 MESSAGE=""
 
+echo "CPU Usage is: $CPU_USAGE"
+echo "ProcessIds: $"
 while IFS= read -r line
 do
-    USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
-    FOLDER=$(echo $line | awk -F " " '{print $NF}')
+    USAGE=$(echo $line)
 
-    if [ $USAGE -ge $DISK_THRESHOLD ]
-    then
-        ##MESSAGE="$FOLDER is more than $DISK_THRESHOLD, Current Usage: $USAGE" --> override previous value
-        MESSAGE+="$FOLDER is more than $DISK_THRESHOLD, Current Usage: $USAGE \n"
+    if [ $USAGE -ge $CPU_THRESHOLD ]
+    then        
+        MESSAGE+="$PROCESSID is more than $CPU_THRESHOLD, Current Usage is: $USAGE \n"
     fi
 
-done <<< $DISK_USAGE
+done <<< $CPU_USAGE
 
 echo -e "Message : $MESSAGE"
 
 # echo "body" | mail -s "subject" to-email-address
 
-echo "$MESSAGE" | mail -s "Disk Usage Alert!!" pavan.pathakota@gmail.com
+echo "$MESSAGE" | mail -s "CPU Usage Alert!!" pavan.pathakota@gmail.com

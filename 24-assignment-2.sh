@@ -42,3 +42,20 @@ tar -cvzf $ARCHIVE $SORUCE_DIR
 ## f - This flag signifies that the next part will be the new .tar file's file name. It should always be the last flag.
 
 echo "Backup $ARCHIVE created successfully."
+
+<<com
+
+[ ec2-user@ip-172-31-28-41 ~/shell-script ]$ sh 24-assignment-2.sh src-dir dest-dir
+Timestamp: 2024-05-03-16-56-02
+Source directory: src-dir
+Destination directory: dest-dir
+Archived file created at destination: dest-dir/backup-2024-05-03-16-56-02.tar.gz
+src-dir/
+src-dir/words.txt
+src-dir/test1.log
+src-dir/test2.log
+src-dir/test3.log
+src-dir/words-2.txt
+Backup dest-dir/backup-2024-05-03-16-56-02.tar.gz created successfully.
+
+com
