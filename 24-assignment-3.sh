@@ -4,7 +4,7 @@
 
 CPU_USAGE=$(ps auxk-c --no-headers | head -6 | awk -F " " '{print $3F}')
 PROCESSID=$(ps auxk-c --no-headers | head -6 | awk -F " " '{print $2F}')
-CPU_THRESHOLD=10
+CPU_THRESHOLD=0
 MESSAGE=""
 
 echo "CPU Usage is: $CPU_USAGE"
