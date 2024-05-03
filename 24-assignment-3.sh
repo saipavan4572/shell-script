@@ -8,7 +8,7 @@ CPU_THRESHOLD=0.0
 MESSAGE=""
 
 echo "CPU Usage is: $CPU_USAGE"
-echo "ProcessIds: $"
+echo "ProcessIds: $PROCESSID"
 while IFS= read -r line
 do
     USAGE=$(echo $line)
