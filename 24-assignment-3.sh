@@ -6,7 +6,7 @@
 #PROCESSID=$(ps auxk-c --no-headers | head -6 | awk -F " " '{print $2F}')
 
 CPU_USAGE=$(ps auxk-c --no-headers | head -6)
-CPU_THRESHOLD='0.0'
+CPU_THRESHOLD=0.0
 MESSAGE=""
 
 echo "CPU Usage is: $CPU_USAGE"
@@ -18,7 +18,7 @@ do
     PID=$(echo $line | awk -F " " '{print $2F}')
     echo "PID is: $PID"
 
-    if [[$($USAGE | bc -l) -ge $CPU_THRESHOLD ]]
+    if [$USAGE -ge $CPU_THRESHOLD ]
     then        
         MESSAGE+="$PID is more than $CPU_THRESHOLD, Current Usage is: $USAGE \n"
     fi
