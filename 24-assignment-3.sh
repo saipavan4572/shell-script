@@ -9,7 +9,7 @@ CPU_USAGE=$(ps auxk-c --no-headers | head -6)
 CPU_THRESHOLD=0.0
 MESSAGE=""
 
-echo "CPU Usage is: $CPU_USAGE"
+echo -e "CPU Usage is: \n$CPU_USAGE"
 #echo "ProcessIds: $PROCESSID"
 while IFS= read -r line
 do
