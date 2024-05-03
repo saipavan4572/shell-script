@@ -2,8 +2,10 @@
 
 ## display the top 5 cpu consuming process in linux, send alert if more than threshold
 
-CPU_USAGE=$(ps auxk-c --no-headers | head -6 | awk -F " " '{print $3F}')
-PROCESSID=$(ps auxk-c --no-headers | head -6 | awk -F " " '{print $2F}')
+#CPU_USAGE=$(ps auxk-c --no-headers | head -6 | awk -F " " '{print $3F}')
+#PROCESSID=$(ps auxk-c --no-headers | head -6 | awk -F " " '{print $2F}')
+
+CPU_USAGE=$(ps auxk-c --no-headers | head -6)
 CPU_THRESHOLD=0.0
 MESSAGE=""
 
@@ -11,12 +13,14 @@ echo "CPU Usage is: $CPU_USAGE"
 echo "ProcessIds: $PROCESSID"
 while IFS= read -r line
 do
-    USAGE=$(echo $line)
+    USAGE=$(echo $line | awk -F " " '{print $3F}')
     echo "usage is: $USAGE"
+    PID=$(echo $line | awk -F " " '{print $2F}')
+    echo "PID is: $PID"
 
     if [ $USAGE -ge $CPU_THRESHOLD ]
     then        
-        MESSAGE+="$PROCESSID is more than $CPU_THRESHOLD, Current Usage is: $USAGE \n"
+        MESSAGE+="$PID is more than $CPU_THRESHOLD, Current Usage is: $USAGE \n"
     fi
 
 done <<< $CPU_USAGE
