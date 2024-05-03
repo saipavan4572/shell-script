@@ -10,13 +10,13 @@ CPU_THRESHOLD=0.0
 MESSAGE=""
 
 echo -e "CPU Usage is: \n$CPU_USAGE"
-#echo "ProcessIds: $PROCESSID"
+
 while IFS= read -r line
 do
     USAGE=$(echo $line | awk -F " " '{print $3F}')
-    echo "usage is: $USAGE"
+    #echo "usage is: $USAGE"
     PID=$(echo $line | awk -F " " '{print $2F}')
-    echo -e "PID is: $PID \n"
+    #echo -e "PID is: $PID \n"
 
     #if [$USAGE -ge $CPU_THRESHOLD ]
     if (( $(bc -l<<<"$USAGE>=$CPU_THRESHOLD") )) 
