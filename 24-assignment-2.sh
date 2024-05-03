@@ -32,6 +32,13 @@ fi
 
 ARCHIVE="${2}/backup-${TIMESTAMP}.tar.gz"
 
+echo "Archived file created at destination: $ARCHIVE"
+
 tar -cvzf $ARCHIVE $SORUCE_DIR
+
+## c - This flag signals the "creation" of the .tar file. It should always come first.
+## v - This indicates that the process is "verbose". This will display a readout of all the files that  get added to the .tar file as it is being created. This is an optional flag.
+## z - This flag will compress the new .tar file using gzip. Make sure to include the .gz extension at the end of the file name.
+## f - This flag signifies that the next part will be the new .tar file's file name. It should always be the last flag.
 
 echo "Backup $ARCHIVE created successfully."
