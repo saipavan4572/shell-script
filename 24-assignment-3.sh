@@ -19,7 +19,7 @@ do
     echo "PID is: $PID"
 
     #if [$USAGE -ge $CPU_THRESHOLD ]
-    if [$USAGE>="$CPU_THRESHOLD" ]
+    if (( $(bc -l<<<"$USAGE>=$CPU_THRESHOLD") )) 
     then        
         MESSAGE+="$PID is more than $CPU_THRESHOLD, Current Usage is: $USAGE \n"
     fi
