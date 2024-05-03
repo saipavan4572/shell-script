@@ -28,4 +28,4 @@ echo -e "Message : $MESSAGE"
 # echo "body" | mail -s "subject" to-email-address
 
 
-# echo "$MESSAGE" | mail -s "CPU Usage Alert!!" pavan.pathakota@gmail.com
+echo "$MESSAGE" | mail -s "CentOS-Server CPU Usage Alert!!" pavan.pathakota@gmail.com
