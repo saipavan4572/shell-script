@@ -16,7 +16,7 @@ do
     USAGE=$(echo $line | awk -F " " '{print $3F}')
     echo "usage is: $USAGE"
     PID=$(echo $line | awk -F " " '{print $2F}')
-    echo "PID is: $PID"
+    echo -e "PID is: $PID \n"
 
     #if [$USAGE -ge $CPU_THRESHOLD ]
     if (( $(bc -l<<<"$USAGE>=$CPU_THRESHOLD") )) 
@@ -30,6 +30,5 @@ echo -e "Message : $MESSAGE"
 
 # echo "body" | mail -s "subject" to-email-address
 
-echo "message: $MESSAGE" 
 
 # echo "$MESSAGE" | mail -s "CPU Usage Alert!!" pavan.pathakota@gmail.com
