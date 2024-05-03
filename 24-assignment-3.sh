@@ -18,7 +18,7 @@ do
     PID=$(echo $line | awk -F " " '{print $2F}')
     echo "PID is: $PID"
 
-    if [ $($USAGE | bc -l) -ge $CPU_THRESHOLD ]
+    if [[$($USAGE | bc -l) -ge $CPU_THRESHOLD ]]
     then        
         MESSAGE+="$PID is more than $CPU_THRESHOLD, Current Usage is: $USAGE \n"
     fi
