@@ -12,6 +12,7 @@ echo "ProcessIds: $"
 while IFS= read -r line
 do
     USAGE=$(echo $line)
+    echo "usage is: $USAGE"
 
     if [ $USAGE -ge $CPU_THRESHOLD ]
     then        
